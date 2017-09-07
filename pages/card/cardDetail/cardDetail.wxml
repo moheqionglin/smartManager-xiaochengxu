@@ -1,0 +1,37 @@
+<!--logs.wxml-->
+
+<view class="container">
+
+    <view class="card-header">
+        <view class="header-company-name">
+          {{cardDetail.companyName}} 
+        </view>
+        <view class="header-company-logo">
+           <image class="logo" src="{{cardDetail.companyLogo}}" background-size="cover"></image>
+        </view>
+        <view class="header-company-title">{{cardDetail.productName}}保修卡</view>
+    </view>
+    <view class="table">
+        <view class="tr">
+            <view class="th">客户姓名：</view>
+            <view class="td">{{cardDetail.name}}</view>
+           
+        </view>
+        <view class="tr">
+            <view class="th">客户地址：</view>
+            <view class="td">{{cardDetail.address}}</view>
+        </view>     
+        <view class="tr">
+              <view class="th">客户合同日期：</view>
+              <view class="td">{{cardDetail.contractDate}}</view>
+        </view>
+        <view class="tr">
+              <view class="th">保修日期：</view>
+              <view class="td">{{cardDetail.guaranteeExpire}}</view>
+        </view>
+        <view class="tr">
+              <view class="th">下次保养日期：</view>
+              <view class="td">{{cardDetail.nextMaintainDate}}</view>
+        </view>      
+    </view>
+</view>

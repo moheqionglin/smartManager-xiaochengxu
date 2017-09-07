@@ -1,0 +1,50 @@
+
+
+page {
+  font-size: 14px;
+  color: #333
+}
+.table {
+    border:1px solid #dadada;
+    border-right: 0;
+    border-bottom: 0;
+    width: 98%;
+}
+.tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.th,.td {
+    padding: 10px;
+    border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    text-align: center;
+    width:100%
+}
+.th {
+    font-weight: 400;
+    background-color: #dadada
+}
+
+.card-header{
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  justify-content: center;
+   align-items: center;
+}
+.header-company-name{
+  font-size: 18pt;
+  color: #1296db;
+  margin :45rpx;
+} 
+.header-company-logo image{
+  width: 130rpx;
+  height: 130rpx;
+} 
+.header-company-title {
+  font-size: 28pt;
+  color: #1296db;
+   margin :45rpx;
+}

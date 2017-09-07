@@ -1,0 +1,43 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  justify-content: center;
+   align-items: center;
+}
+
+.logo {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  
+}
+
+.company-name {
+  color: #1296db;
+  margin: 40rpx;
+  font-size: 18pt;
+ 
+}
+.company-desc{
+  text-indent: 22pt;
+  font-size: 11pt;
+  line-height: 40rpx;
+}
+
+.company-address {
+  color: #1296db;
+  margin: 40rpx;
+  font-size: 12pt;
+} 
+.company-phone {
+  color: #1296db;
+  margin: 20rpx;
+  font-size: 12pt;
+}
+.phone{
+  margin-bottom: 50rpx;
+ 
+}

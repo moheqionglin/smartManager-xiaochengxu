@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="logo" src="{{companyInfo.logo}}" background-size="cover"></image>
+    <text class="company-name">{{companyInfo.name}}</text>
+    <text class="company-desc">{{companyInfo.description}}</text>
+    <text class="company-address">公司地址： {{companyInfo.address}}</text>
+    <text class="company-phone">公司电话： {{companyInfo.phone}}</text>
+  </view>
+
+
+</view>
+<button type="primary" size="default" class="phone" bindtap="calling">拨打电话</button>

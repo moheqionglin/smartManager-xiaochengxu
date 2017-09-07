@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+<view class="card-container">
+  <view class="card-item" wx:for="{{products}}" wx:key="{{item.productId}}">
+      <navigator class="item-content" url="/pages/card/cardDetail/cardDetail?productId={{item.productId}}&productName={{item.name}}">
+        <view class="item-content-left">{{item.name}}</view>
+        <view class="item-content-right">查看详情 >></view>
+      </navigator>
+  </view>
+</view>

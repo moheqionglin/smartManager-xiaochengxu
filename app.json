@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/card/card",
+    "pages/card/cardDetail/cardDetail"
+
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#159066",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小马智能空调"
+  },
+  
+ 
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "/images/company-active.png",
+        "iconPath": "/images/company-inactive.png",
+        "pagePath": "pages/index/index",
+        "text": "公司简介"
+      },
+      {
+        "selectedIconPath": "/images/card-active.png",
+        "iconPath": "/images/card-inactive.png",
+        "pagePath": "pages/card/card",
+        "text": "我的保单"
+      }
+
+    
+    ]
+  }
+}
