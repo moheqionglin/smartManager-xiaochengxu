@@ -7,3 +7,55 @@
   justify-content: space-between;
   box-sizing: border-box;
 } 
+.page{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:'Microsoft YaHei', Helvetica, STHeiTi, sans-seri;
+  font-size: 28rpx;
+  color: #333;
+}
+/** nav 组件**/
+.top-bar {
+  height: 75rpx;
+  padding-top: 40rpx;
+  background: #fff;
+  width:100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  top:0;
+  z-index:1;
+}
+.top-bar-item {
+  position: relative;  
+  flex: auto;  
+  display:inline-block;
+  height: 65rpx;
+  color: #111;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bolder;
+}
+.top-bar-item.active{
+  color: #159066;
+}
+.top-bar .top-bar-item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 5rpx;  
+  background: #159066;  
+}  
+.sub-line{  
+  margin-top: 20rpx;
+  height: 8rpx;  
+  background: #159066;  
+  width: 75rpx;
+  margin-bottom: 30rpx;
+}  
+ 

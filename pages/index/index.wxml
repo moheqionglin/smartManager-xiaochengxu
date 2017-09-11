@@ -1,13 +1,80 @@
 <!--index.wxml-->
+<import src="../common/nav.wxml"/>
+
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="logo" src="{{companyInfo.logo}}" background-size="cover"></image>
-    <text class="company-name">{{companyInfo.name}}</text>
-    <text class="company-desc">{{companyInfo.description}}</text>
-    <text class="company-address">公司地址： {{companyInfo.address}}</text>
-    <text class="company-phone">公司电话： {{companyInfo.phone}}</text>
-  </view>
+  
+    <template is="nav" data="{{ navList, activeIndex }}"/>
+    
+    <view hidden="{{activeIndex !== 0}}" class="nav-context-container">
+      <view class="company-swiper-view">
+          <swiper class="company-swiper-sec" indicator-dots="{{companyDescNav.indicatorDots}}"
+          autoplay="{{companyDescNav.autoplay}}" interval="{{companyDescNav.interval}}" duration="{{companyDescNav.duration}}">
+            <block wx:for-items="{{companyDescNav.banner_list[0].banner}}">
+              <swiper-item>
+                <image src="{{item.pic_url}}" class="company-swiper-image" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="company-info">
+            <image class="logo" src="{{companyInfo.logo}}" background-size="cover"></image>
+            <text class="company-name">{{companyInfo.name}}</text>
+            <view class="sub-line"></view>
+            <text class="company-desc">{{companyInfo.description}}</text>
+            <view class="contact-us">
+              <text class="company-address">公司地址： {{companyInfo.address}}</text>
+              <text class="company-phone">公司电话： {{companyInfo.phone}}</text>
+            </view>  
+        </view>
+        <button type="primary" size="default" class="phone" bindtap="calling">拨打电话</button> 
+
+    </view>
+    <view hidden="{{activeIndex !== 1}}" class="nav-context-container">
+        <block wx:if="{{list.goodsList == null}}">
+            <view class="wait-more">敬请期待...</view>
+        </block>
+        <block wx:if="{{list.goodsList != null}}">
+            <view class="top-slider">
+                <swiper class="slider-sec" indicator-dots="{{indicatorDots}}"
+                        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:for="{{list.imageList}}">
+                        <swiper-item>
+                            <image src="{{item}}" class="slide-image" width="355" height="150"
+                                   bindtap="goBanner"/>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            <view class="list-detail" wx:for="{{list.goodsList}}" wx:for-item="item"
+                  data-value="{{item}}" bindtap="getDetail">
+                <view class="list-sec">
+                    <view class="left-sec">
+                        <image class="sec-img" src="{{item.goodsImg}}" background-size="cover"></image>
+                    </view>
+                    <view class="right-sec">
+                        <view class="title">{{item.goodsName}}</view>
+                        <view class="description">{{item.tagline}}</view>
+                        <view class="pirce-wrapper">
+                            <view class="inline-block now">￥{{item.sellPrice}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="inline-block go-buy">查看详情</view>
+            </view>
+        </block>
+    </view>
+    <view hidden="{{activeIndex !== 2}}">
+     合作伙伴
+    </view>
+    <view hidden="{{activeIndex !== 3}}">
+      <view  bindtap="bindViewTap" class="userinfo">
+        <image class="logo" src="{{companyInfo.logo}}" background-size="cover"></image>
+        <text class="company-name">{{companyInfo.name}}</text>
+        <text class="company-desc">{{companyInfo.description}}</text>
+        
+      </view> 
+    </view>
+ 
 
 
 </view>
-<button type="primary" size="default" class="phone" bindtap="calling">拨打电话</button>
