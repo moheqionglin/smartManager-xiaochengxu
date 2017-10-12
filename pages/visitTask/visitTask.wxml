@@ -1,0 +1,57 @@
+<import src="../common/nav.wxml"/>
+
+<view class="container">
+  
+    <template is="nav" data="{{ navList, activeIndex }}"/>
+    
+    <view hidden="{{activeIndex !== 0}}" class="nav-context-container">
+      <block wx:for="{{willVisit}}">
+        <view class="visit-item  {{activeIndex == 0 ? '' : 'blur-display'}}">
+          <view class = "visit-header">
+            <text>待回访姓名： 周万里</text>
+            <icon type="success" size="20" color="green" data-deleteId="{{item.id}}   "catchtap="successVisit"></icon>
+          </view>
+          <view class="visit-content">
+            <text>我的产品：{{item.name}}</text>
+            <text>品牌：{{item.brand}}</text>
+            <text>机型：{{item.typed}}</text>
+            <text>保修地址：{{item.address}}</text>
+            <text>保修期限：{{item.during}}</text>
+            <text>合同日期：{{item.contractDate}}</text>
+            <text>保修日期：{{item.expiredDate}}</text>
+            <text>预计上门保修日期：{{item.lastGurateenDate}}</text>
+            <text>离保修期还有：{{item.toGurteenDate}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{activeIndex !== 1}}" class="nav-context-container">
+      <block wx:for="{{hadVisit}}">
+        <view class="visit-item  {{activeIndex == 0 ? '' : 'blur-display'}}">
+          <view class = "visit-header">
+            <text>已访姓名： 周万里</text>
+            <text>回访日期： {{item.visitDate}}</text>
+          </view>
+          <view class="visit-content">
+            <text>我的产品：{{item.name}}</text>
+            <text>品牌：{{item.brand}}</text>
+            <text>机型：{{item.typed}}</text>
+            <text>保修地址：{{item.address}}</text>
+            <text>保修期限：{{item.during}}</text>
+            <text>合同日期：{{item.contractDate}}</text>
+            <text>保修日期：{{item.expiredDate}}</text>
+            <text>预计上门保修日期：{{item.lastGurateenDate}}</text>
+            <text>离保修期还有：{{item.toGurteenDate}}</text>
+            <text>回访结果：{{item.visitComment}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+   
+</view>
+
+<modal hidden="{{hidden}}" title="确认已经回访？" 
+    confirm-text="确定已回访" cancel-text="撤销" 
+    bindcancel="cancel" bindconfirm="confirm" >
+    <textarea placeholder="请输入本次回访结果" name="textarea" bindinput="visitCommentInput" value="{{visitComment}}" auto-height/>
+</modal>

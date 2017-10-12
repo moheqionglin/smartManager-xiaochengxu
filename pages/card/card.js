@@ -5,6 +5,13 @@ Page({
     logs: [],
     products:[]
   },
+  onShareAppMessage: function () {
+    return {
+      title: '菱坤冷暖',
+      desc: '最具人气的冷暖公司!',
+      path: '/pages/card/card'
+    }
+  },
   onLoad: function () {
     this.setData({
       logs: (wx.getStorageSync('logs') || []).map(function (log) {

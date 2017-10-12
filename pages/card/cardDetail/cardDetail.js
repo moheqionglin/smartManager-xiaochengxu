@@ -4,6 +4,13 @@ Page({
   data: {
     cardDetail:{}
   },
+  onShareAppMessage: function () {
+    return {
+      title: '菱坤冷暖',
+      desc: '最具人气的冷暖公司!',
+      path: '/pages/card/cardDetail/cardDetail'
+    }
+  },
   onLoad: function (options) {
     var that = this
 

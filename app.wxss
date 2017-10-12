@@ -35,7 +35,7 @@
   height: 65rpx;
   color: #111;
   text-align: center;
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-weight: bolder;
 }
 .top-bar-item.active{

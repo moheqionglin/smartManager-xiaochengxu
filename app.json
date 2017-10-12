@@ -2,8 +2,11 @@
   "pages":[
     "pages/index/index",
     "pages/card/card",
-    "pages/card/cardDetail/cardDetail"
-
+    "pages/card/cardDetail/cardDetail",
+    "pages/guarantee/guarantee",
+    "pages/login/login",
+    "pages/visitTask/visitTask",
+    "pages/shopping/shopping"
     
   ],
   "window":{
@@ -16,22 +19,33 @@
  
   "tabBar": {
     "color": "#a9b7b7",
-    "selectedColor": "#1296db",
+    "selectedColor": "#159066",
     "borderStyle": "black",
     "list": [
       {
         "selectedIconPath": "/images/company-active.png",
         "iconPath": "/images/company-inactive.png",
         "pagePath": "pages/index/index",
-        "text": "公司简介"
+        "text": "主页"
       },
       {
         "selectedIconPath": "/images/card-active.png",
         "iconPath": "/images/card-inactive.png",
-        "pagePath": "pages/card/card",
-        "text": "我的保单"
+        "pagePath": "pages/guarantee/guarantee",
+        "text": "保单"
+      },
+      {
+        "selectedIconPath": "/images/call-active.png",
+        "iconPath": "/images/call-inactive.png",
+        "pagePath": "pages/visitTask/visitTask",
+        "text": "回访"
+      },
+      {
+        "selectedIconPath": "/images/shop-active.png",
+        "iconPath": "/images/shop-inactive.png",
+        "pagePath": "pages/shopping/shopping",
+        "text": "商城"
       }
-
     
     ]
   }

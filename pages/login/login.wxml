@@ -1,0 +1,22 @@
+<view class="login-page">
+  <view class="header-view">
+    <image src='../../images/login/login-lock.png'></image>
+  </view>
+  <view class="center-view">
+    <view class="input-view">
+      <image src='../../images/login/name-img.png' ></image>
+      <input type="digit" placeholder="手机号"/>
+      <view type="primary" class='message-code' bindtap="calling">获取短信验证码</view>
+    </view>
+     <view  class="input-view">
+      <image src='../../images/login/pwd-img.png'></image>
+      <input type="digit" placeholder="验证码"/>
+    </view>
+  </view>
+
+</view>
+<view class="btn-grp">
+  <button type="primary" size="large" class="phone" bindtap="calling">手机号登录</button> 
+  <button type="primary" size="large" class="phone" bindtap="calling">微信号登录</button> 
+</view> 
+

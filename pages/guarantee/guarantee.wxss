@@ -1,0 +1,52 @@
+
+.sec-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 850rpx;
+    position: relative;
+    margin-top: 100rpx;
+    width:100%; 
+    background:white;
+   
+}
+.slider-sec{
+    width: 80%;
+    height: 100%;
+    box-shadow:1rpx 1rpx 1rpx 1rpx #ededed;
+    border-radius: 25rpx;
+    overflow-x: hidden;
+}
+.we-slide{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  height: 700rpx;
+  box-sizing: border-box;
+  border-radius: 25rpx;
+}
+
+.text-view{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #898989;
+  font-size: 9pt;
+  padding-left: 25rpx;
+  margin-top: 25rpx;
+
+}
+
+.text-view text{
+  text-align: left;
+  margin-top: 10rpx;
+}
+.we-slide image{
+  border-top-left-radius: 25rpx;
+  border-top-right-radius: 25rpx;
+  width: 100%;
+  height: 40%;
+
+}

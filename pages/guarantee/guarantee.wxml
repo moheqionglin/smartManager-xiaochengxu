@@ -1,0 +1,27 @@
+<view class="sec-detail" wx:if="{{hasLogin}}">
+    <swiper class="slider-sec" indicator-dots="{{indicatorDots}}"
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for="{{products}}">
+                    <swiper-item>
+                        <view class="we-slide  {{activeIndex == 0 ? '' : 'blur-display'}}">
+                           <image src="{{item.url}}" class="slide-image"/>
+
+                          <view class="text-view">
+                            <text>我的产品：{{item.name}}</text>
+                            <text>品牌：{{item.brand}}</text>
+                            <text>机型：{{item.typed}}</text>
+                            <text>机号：{{item.num}}</text>
+                            <text>保修地址：{{item.address}}</text>
+                            <text>保修期限：{{item.during}}</text>
+                            <text>合同日期：{{item.contractDate}}</text>
+                            <text>保修日期：{{item.expiredDate}}</text>
+                            <text>预计上门保修日期：{{item.gurateenDate}}</text>
+                            <text>离保修期还有：{{item.toGurteenDate}}</text>
+                          </view>
+                        </view>
+                       
+                    </swiper-item>
+                </block>
+            </swiper>  
+
+</view>

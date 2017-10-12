@@ -1,0 +1,43 @@
+
+page{
+
+  background-color: rgba(198, 198, 198, 0.2);
+}
+ 
+.nav-context-container{
+  /* position: relative;   */
+  margin-top: 120rpx;
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 50rpx;
+}
+.visit-item{
+  background-color: #fff;
+  margin-bottom: 15rpx;
+  
+}
+.visit-content{
+  height: 50%;
+  display: flex;
+  font-weight: 200;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #898989;
+  font-size: 26rpx;
+  padding-left: 25rpx;
+  margin-top: 25rpx;
+}
+
+.visit-content text{
+  text-align: left;
+  /* margin-top: 10rpx; */
+}
+.visit-item .visit-header{
+  font-size: 26rpx;
+  border-bottom: 2rpx dashed rgba(198, 198, 198, 0.3);
+  padding: 25rpx;
+  display: flex;
+  justify-content: space-between
+}

@@ -17,64 +17,54 @@
           </swiper>
         </view>
         <view class="company-info">
-            <image class="logo" src="{{companyInfo.logo}}" background-size="cover"></image>
-            <text class="company-name">{{companyInfo.name}}</text>
-            <view class="sub-line"></view>
-            <text class="company-desc">{{companyInfo.description}}</text>
+            <!-- <image class="logo" src="{{companyInfo.logo}}" background-size="cover"></image>
+            <text class="company-name">{{companyInfo.name}}</text> -->
+            <!-- <view class="sub-line"></view> -->
+            <text bindtap="tollgnCompanyDesc" class="company-desc  {{hideCompanyDesc ? 'hidden-company-desc' : ''}}">{{companyInfo.description}}</text>
             <view class="contact-us">
-              <text class="company-address">公司地址： {{companyInfo.address}}</text>
-              <text class="company-phone">公司电话： {{companyInfo.phone}}</text>
-            </view>  
+              <view class="contact-header">
+                <image class="contact-call-img" bindtap="calling" src="../../images/call-active.png"></image>
+                <view class="contact-content">
+                 <text class="company-phone">{{companyInfo.phone}}</text>
+                 <text class="company-address">{{companyInfo.address}}</text>
+                </view>
+              </view>
+              <map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}"  ></map>
+              <button  class="start-map" bindtap="startMap">开始导航</button> 
+            </view> 
         </view>
-        <button type="primary" size="default" class="phone" bindtap="calling">拨打电话</button> 
-
+       
     </view>
     <view hidden="{{activeIndex !== 1}}" class="nav-context-container">
-        <block wx:if="{{list.goodsList == null}}">
+        <block wx:if="{{exampleNav.goodsList == null}}">
             <view class="wait-more">敬请期待...</view>
         </block>
-        <block wx:if="{{list.goodsList != null}}">
-            <view class="top-slider">
-                <swiper class="slider-sec" indicator-dots="{{indicatorDots}}"
-                        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-                    <block wx:for="{{list.imageList}}">
-                        <swiper-item>
-                            <image src="{{item}}" class="slide-image" width="355" height="150"
-                                   bindtap="goBanner"/>
-                        </swiper-item>
-                    </block>
-                </swiper>
-            </view>
-            <view class="list-detail" wx:for="{{list.goodsList}}" wx:for-item="item"
+        <block wx:if="{{exampleNav.goodsList != null}}">
+           
+            <view class="list-detail" wx:for="{{exampleNav.goodsList}}" wx:for-item="item"
                   data-value="{{item}}" bindtap="getDetail">
                 <view class="list-sec">
-                    <view class="left-sec">
-                        <image class="sec-img" src="{{item.goodsImg}}" background-size="cover"></image>
-                    </view>
-                    <view class="right-sec">
-                        <view class="title">{{item.goodsName}}</view>
-                        <view class="description">{{item.tagline}}</view>
-                        <view class="pirce-wrapper">
-                            <view class="inline-block now">￥{{item.sellPrice}}</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="inline-block go-buy">查看详情</view>
+                  <image class="sec-img" src="{{item.goodsImg}}" background-size="cover"></image>
+                  <view class="description">{{item.tagline}}</view>
+            </view>
             </view>
         </block>
     </view>
-    <view hidden="{{activeIndex !== 2}}">
-     合作伙伴
+    <view hidden="{{activeIndex !== 2}}" class="nav-context-container">
+        <view class='partener-top-image'>
+          <image class='productimg' src='../../images/delete/partener.jpg'/>
+        </view>
+        <view class='separator'></view>
+        <view class='floortitle'>
+          <view class='floortitle-header'>合作伙伴</view>
+          <view class='floortitle-content'>以严格的尺度来衡量合作表现，我们有你才精彩</view>
+         </view>
+        <view class="hotgoodcontainer">
+          <view class='gooditem' wx:for="{{hotgoods}}" wx:for-index="idx" wx:for-item="good">
+                 <image class='productimg' src='{{good.pic_url}}' mode="widthFix"/>
+               <view class='good-name'>{{good.name}}</view>
+            </view>
+        </view>
     </view>
-    <view hidden="{{activeIndex !== 3}}">
-      <view  bindtap="bindViewTap" class="userinfo">
-        <image class="logo" src="{{companyInfo.logo}}" background-size="cover"></image>
-        <text class="company-name">{{companyInfo.name}}</text>
-        <text class="company-desc">{{companyInfo.description}}</text>
-        
-      </view> 
-    </view>
- 
-
 
 </view>

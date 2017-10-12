@@ -1,0 +1,11 @@
+
+<view class="shop-container">
+  <block wx:for="{{products}}">
+        <view class=" visit-item">
+          <image src='{{item.img}}'></image>
+          <text>{{item.brand}}  {{item.name}}</text>
+          <text>机型：{{item.typed}}</text>
+          <text class="price">￥{{item.price}}</text>
+        </view>
+      </block>
+</view>
